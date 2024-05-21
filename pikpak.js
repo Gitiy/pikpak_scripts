@@ -198,6 +198,8 @@ class PikPak {
       "x-requested-with": this.package_name,
     };
 
+    console.log(url, params, headers);
+
     const { data } = await this.client.get(url, { params, headers });
     const body = genSign(data, this.deviceid);
     console.log(`获取到验证参数：${JSON.stringify(body)}`);
