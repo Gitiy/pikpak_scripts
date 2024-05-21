@@ -590,8 +590,10 @@ function c(e, t) {
 }
 
 function genSign(data, deviceid) {
+    console.log(`genSign(${data}, ${deviceid})`, data, deviceid)
     for (let j = 0; j < data.frames.length; j++) {
         const matrix = findMatchingMatrix(data.frames[j].matrix)
+        console.log(`matrix`, matrix)
         if (matrix) {
             console.log(`找到目标步数：${j}`)
             const {ca, f} = tools(data.frames, j, data.pid);
